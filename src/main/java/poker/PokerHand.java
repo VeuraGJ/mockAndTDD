@@ -32,27 +32,13 @@ public class PokerHand {
         if(!result.equals("peace")){
             return result;
         }
-        if(isFlush(player1) && !isFlush(player2)){
-            if(threePair2 != 0 && player2PairCard.size()>0){
-                return "player2 win";
-            }
-            return "player1 win";
-        }else if(!isFlush(player1) && isFlush(player2)){
-            if(threePair1 != 0 && player1PairCard.size()>0){
-                return "player1 win";
-            }
-            return "player2 win";
+       result = compareFlush(player1,player2);
+        if(!result.equals("peace")){
+            return result;
         }
-        if(isStraight(sortedPlayer1) && !isStraight(sortedPlayer2)){
-            if(threePair2 != 0 && player2PairCard.size()>0){
-                return "player2 win";
-            }
-            return "player1 win";
-        }else if(!isStraight(sortedPlayer1) && isStraight(sortedPlayer2)){
-            if(threePair1 != 0 && player1PairCard.size()>0){
-                return "player1 win";
-            }
-            return "player2 win";
+        result = compareStraight(player1,player2);
+        if(!result.equals("peace")){
+            return result;
         }
         result = compareTwoCard(threePair1,threePair2);
         if(result.equals("player1 win")){
@@ -89,8 +75,46 @@ public class PokerHand {
         }
         return false;
     }
-
-
+    private String compareFlush(List<PokerCard> pokerCards1,List<PokerCard> pokerCards2){
+        Integer threePair1 = getThreePairNumber(cardToMap(pokerCards1));
+        Integer threePair2 = getThreePairNumber(cardToMap(pokerCards2));
+        List<Integer> player1PairCard = getPairCard(cardToMap(pokerCards1));
+        List<Integer> player2PairCard = getPairCard(cardToMap(pokerCards2));
+        if(isFlush(pokerCards1) && !isFlush(pokerCards2)){
+            if(threePair2 != 0 && player2PairCard.size()>0){
+                return "player2 win";
+            }
+            return "player1 win";
+        }else if(!isFlush(pokerCards1) && isFlush(pokerCards2)){
+            if(threePair1 != 0 && player1PairCard.size()>0){
+                return "player1 win";
+            }
+            return "player2 win";
+        }
+        return "peace";
+    }
+    private String compareStraight(List<PokerCard> pokerCards1,List<PokerCard> pokerCards2){
+        List<Integer> sortedPlayer1 = getSortedCardList(pokerCards1);
+        List<Integer> sortedPlayer2 = getSortedCardList(pokerCards2);
+        Map<Integer,Integer> player1ToMap = cardToMap(pokerCards1);
+        Map<Integer,Integer> player2ToMap = cardToMap(pokerCards2);
+        Integer threePair1 = getThreePairNumber(player1ToMap);
+        Integer threePair2 = getThreePairNumber(player2ToMap);
+        List<Integer> player1PairCard = getPairCard(player1ToMap);
+        List<Integer> player2PairCard = getPairCard(player2ToMap);
+        if(isStraight(sortedPlayer1) && !isStraight(sortedPlayer2)){
+            if(threePair2 != 0 && player2PairCard.size()>0){
+                return "player2 win";
+            }
+            return "player1 win";
+        }else if(!isStraight(sortedPlayer1) && isStraight(sortedPlayer2)){
+            if(threePair1 != 0 && player1PairCard.size()>0){
+                return "player1 win";
+            }
+            return "player2 win";
+        }
+        return "peace";
+    }
     private boolean isStraight(List<Integer> sortedCards) {
         if(sortedCards.get(0)-sortedCards.get(sortedCards.size()-1) == 4){
             return true;
