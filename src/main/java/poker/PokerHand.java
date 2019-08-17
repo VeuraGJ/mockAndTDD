@@ -38,8 +38,14 @@ public class PokerHand {
             return "player2 win";
         }
         if(isStraight(sortedPlayer1) && !isStraight(sortedPlayer2)){
+            if(threePair2 != 0 && player2PairCard.size()>0){
+                return "player2 win";
+            }
             return "player1 win";
         }else if(!isStraight(sortedPlayer1) && isStraight(sortedPlayer2)){
+            if(threePair1 != 0 && player1PairCard.size()>0){
+                return "player1 win";
+            }
             return "player2 win";
         }
         String result = compareTwoCard(threePair1,threePair2);

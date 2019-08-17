@@ -174,5 +174,17 @@ public class PokerHandsTest {
 
     }
 
+    @Test
+    public void should_return_player2_win_when_given_3D_4D_5C_6C_7H_and_4C_4S_4H_6D_6H(){
+        //given
+        PokerHand pokerHand = new PokerHand();
+        //when
+        String acutalResult = pokerHand.play(Arrays.asList(new PokerCard("3D"),new PokerCard("4D"),new PokerCard("5C"),new PokerCard("6C"),new PokerCard("7H"))
+                ,Arrays.asList(new PokerCard("4C"),new PokerCard("4S"),new PokerCard("4H"),new PokerCard("6D"),new PokerCard("6H")));
+        //then
+        Assert.assertEquals("player2 win",acutalResult);
+
+    }
+
 
 }
