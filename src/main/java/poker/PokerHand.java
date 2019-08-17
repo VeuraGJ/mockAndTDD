@@ -18,6 +18,11 @@ public class PokerHand {
     }
 
     public String play(List<PokerCard> player1, List<PokerCard> player2) {
+        if(isFlush(player1) && !isFlush(player2)){
+            return "player1 win";
+        }else if(!isFlush(player1) && isFlush(player2)){
+            return "player2 win";
+        }
         List<Integer> sortedPlayer1 = getSortedCardList(player1);
         List<Integer> sortedPlayer2 = getSortedCardList(player2);
         if(isStraight(sortedPlayer1) && !isStraight(sortedPlayer2)){
@@ -46,6 +51,18 @@ public class PokerHand {
         result = compareTwoList(sortedPlayer1,sortedPlayer2);
         return result;
     }
+
+    private boolean isFlush(List<PokerCard> pokerCards) {
+        String type = pokerCards.get(0).getType();
+        int sameTypeCount = pokerCards.stream()
+                .filter(pokerCard -> pokerCard.getType().equals(type))
+                .collect(Collectors.toList()).size();
+        if(sameTypeCount == pokerCards.size()){
+            return true;
+        }
+        return false;
+    }
+
 
     private boolean isStraight(List<Integer> sortedCards) {
         if(sortedCards.get(0)-sortedCards.get(sortedCards.size()-1) == 4){

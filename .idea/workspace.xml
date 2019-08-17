@@ -4,7 +4,6 @@
     <list default="true" id="c9af72bd-f2fc-4e9c-91dc-fa8ce282bf7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/poker/PokerHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poker/PokerHand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/poker/PokerHandsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/poker/PokerHandsTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
+            <state relative-caret-position="583">
+              <caret line="152" selection-start-line="152" selection-end-line="152" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/poker/PokerHand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            <state relative-caret-position="209">
+              <caret line="54" column="19" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -395,7 +394,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16368000" />
+    <option name="totallyTimeSpent" value="16452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -499,8 +498,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
+        <state relative-caret-position="583">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -509,8 +508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/poker/PokerHand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        <state relative-caret-position="209">
+          <caret line="54" column="19" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
