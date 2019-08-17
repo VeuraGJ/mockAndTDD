@@ -23,18 +23,8 @@ public class PokerHand {
     public String play(List<PokerCard> player1, List<PokerCard> player2) {
         Map<Integer,Integer> player1ToMap = cardToMap(player1);
         Map<Integer,Integer> player2ToMap = cardToMap(player2);
-        Integer player1Pair = -1;
-        Integer player2Pair = -1;
-        for(Integer carNumber:player1ToMap.keySet()){
-            if(player1ToMap.get(carNumber) == 2){
-                player1Pair = player1Pair > carNumber ? player1Pair:carNumber;
-            }
-        }
-        for(Integer carNumber:player2ToMap.keySet()){
-            if(player2ToMap.get(carNumber) == 2){
-                player2Pair = player2Pair > carNumber ? player2Pair:carNumber;
-            }
-        }
+        Integer player1Pair = getMaxPairNumber(player1ToMap);
+        Integer player2Pair = getMaxPairNumber(player2ToMap);
         if(player1Pair > player2Pair){
             return "player1 win";
         }else if(player1Pair < player2Pair){
@@ -51,6 +41,15 @@ public class PokerHand {
             }
         }
         return "peace";
+    }
+    private Integer getMaxPairNumber(Map<Integer,Integer> cardToMap){
+        Integer maxPair = -1;
+        for(Integer carNumber:cardToMap.keySet()){
+            if(cardToMap.get(carNumber) == 2){
+                maxPair = maxPair > carNumber ? maxPair:carNumber;
+            }
+        }
+        return maxPair;
     }
     private Map<Integer,Integer> cardToMap(List<PokerCard> cards){
         Map<Integer,Integer> pairMap = new HashMap<>();
