@@ -43,7 +43,16 @@ public class PokerHand {
             return "player2 win";
         }
         String result = compareTwoCard(threePair1,threePair2);
-        if(!result.equals("peace")){
+        if(result.equals("player1 win")){
+            if(player2PairCard.size()>0 && player1PairCard.size()==0 && threePair2 >0 ){
+                return "player2 win";
+            }
+            return result;
+        }
+        if(result.equals("player2 win")){
+            if(player1PairCard.size()>0 && player2PairCard.size()==0 && threePair1 >0){
+                return "player1 win";
+            }
             return result;
         }
         result = compareTwoCard(player1PairCard.size(),player2PairCard.size());
