@@ -18,6 +18,13 @@ public class PokerHand {
     }
 
     public String play(List<PokerCard> player1, List<PokerCard> player2) {
+        List<Integer> sortedPlayer1 = getSortedCardList(player1);
+        List<Integer> sortedPlayer2 = getSortedCardList(player2);
+        if(isStraight(sortedPlayer1) && !isStraight(sortedPlayer2)){
+            return "player1 win";
+        }else if(!isStraight(sortedPlayer1) && isStraight(sortedPlayer2)){
+            return "player2 win";
+        }
         Map<Integer,Integer> player1ToMap = cardToMap(player1);
         Map<Integer,Integer> player2ToMap = cardToMap(player2);
         Integer threePair1 = getThreePairNumber(player1ToMap);
@@ -36,14 +43,20 @@ public class PokerHand {
         if(!result.equals("peace")){
             return result;
         }
-        List<Integer> sortedPlayer1 = getSortedCardList(player1);
-        List<Integer> sortedPlayer2 = getSortedCardList(player2);
         result = compareTwoList(sortedPlayer1,sortedPlayer2);
         if(!result.equals("peace")){
             return result;
         }
         return "peace";
     }
+
+    private boolean isStraight(List<Integer> sortedCards) {
+        if(sortedCards.get(0)-sortedCards.get(sortedCards.size()-1) == 4){
+            return true;
+        }
+        return  false;
+    }
+
     private Integer getThreePairNumber(Map<Integer,Integer> cardToMap){
         for(Integer carNumber:cardToMap.keySet()){
             if(cardToMap.get(carNumber) == 3){
