@@ -28,10 +28,9 @@ public class PokerHand {
         Integer threePair2 = getThreePairNumber(player2ToMap);
         List<Integer> player1PairCard = getPairCard(player1ToMap);
         List<Integer> player2PairCard = getPairCard(player2ToMap);
-        if(fourPair1 > 0 && fourPair2 ==0){
-            return "player1 win";
-        }else if(fourPair1 == 0 && fourPair2 > 0){
-            return "player2 win";
+        String result = compareTwoCard(fourPair1,fourPair2);
+        if(!result.equals("peace")){
+            return result;
         }
         if(isFlush(player1) && !isFlush(player2)){
             if(threePair2 != 0 && player2PairCard.size()>0){
@@ -55,7 +54,7 @@ public class PokerHand {
             }
             return "player2 win";
         }
-        String result = compareTwoCard(threePair1,threePair2);
+        result = compareTwoCard(threePair1,threePair2);
         if(result.equals("player1 win")){
             if(player2PairCard.size()>0 && player1PairCard.size()==0 && threePair2 >0 ){
                 return "player2 win";
