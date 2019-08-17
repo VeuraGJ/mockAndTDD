@@ -78,10 +78,21 @@ public class PokerHandsTest {
         //given
         PokerHand pokerHand = new PokerHand();
         //when
-        String acutalResult = pokerHand.play(Arrays.asList(new PokerCard("2H"),new PokerCard("2S"),new PokerCard("4D"),new PokerCard("KS"),new PokerCard("KH"))
+        String acutalResult = pokerHand.play(Arrays.asList(new PokerCard("2H"),new PokerCard("2S"),new PokerCard("4D"),new PokerCard("AC"),new PokerCard("AD"))
                 ,Arrays.asList(new PokerCard("9D"),new PokerCard("AS"),new PokerCard("3H"),new PokerCard("3D"),new PokerCard("AH")));
         //then
         Assert.assertEquals("player2 win",acutalResult);
+
+    }
+    @Test
+    public void should_return_player1_win_when_given_2H_2S_9D_AC_AD_and_4D_AS_2H_2D_AH(){
+        //given
+        PokerHand pokerHand = new PokerHand();
+        //when
+        String acutalResult = pokerHand.play(Arrays.asList(new PokerCard("2H"),new PokerCard("2S"),new PokerCard("9D"),new PokerCard("AC"),new PokerCard("AD"))
+                ,Arrays.asList(new PokerCard("4D"),new PokerCard("AS"),new PokerCard("2H"),new PokerCard("2D"),new PokerCard("AH")));
+        //then
+        Assert.assertEquals("player1 win",acutalResult);
 
     }
 }

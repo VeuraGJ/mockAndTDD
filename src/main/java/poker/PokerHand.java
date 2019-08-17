@@ -26,25 +26,27 @@ public class PokerHand {
         if(!result.equals("peace")){
             return result;
         }
-        List<Integer> player1Pair = sortedPairCard(player1PairCard);
-        List<Integer> player2Pair = sortedPairCard(player2PairCard);
-        for(int i =0;i<player1Pair.size();i++){
-            result = compareTwoCard(player1Pair.get(i),player2Pair.get(i));
+        result = compareTwoList(player1PairCard,player2PairCard);
+        if(!result.equals("peace")){
+            return result;
+        }
+        List<Integer> sortedPlayer1 = getSortedCardList(player1);
+        List<Integer> sortedPlayer2 = getSortedCardList(player2);
+        result = compareTwoList(sortedPlayer1,sortedPlayer2);
+        if(!result.equals("peace")){
+            return result;
+        }
+        return "peace";
+    }
+    private String compareTwoList(List<Integer> list1,List<Integer> list2){
+        String result = "peace";
+        for(int i =0;i < list1.size();i++){
+            result = compareTwoCard(list1.get(i),list2.get(i));
             if(!result.equals("peace")){
                 return result;
             }
         }
-        List<Integer> sortedPlayer1 = getSortedCardList(player1);
-        List<Integer> sortedPlayer2 = getSortedCardList(player2);
-        for(int i =0;i < sortedPlayer1.size();i++){
-            result = compareTwoCard(sortedPlayer1.get(i),sortedPlayer2.get(i));
-           if(result.equals("peace")){
-               continue;
-           }else{
-               return result;
-           }
-        }
-        return "peace";
+        return result;
     }
     private String compareTwoCard(Integer card1Number,Integer card2Number){
         if(card1Number>card2Number){
@@ -62,9 +64,6 @@ public class PokerHand {
                 pairCard.add(carNumber);
             }
         }
-        return pairCard;
-    }
-    private List<Integer> sortedPairCard(List<Integer> pairCard){
         return pairCard.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
     private Map<Integer,Integer> cardToMap(List<PokerCard> cards){
