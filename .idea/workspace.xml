@@ -4,6 +4,7 @@
     <list default="true" id="c9af72bd-f2fc-4e9c-91dc-fa8ce282bf7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/poker/PokerHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poker/PokerHand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/poker/PokerHand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/poker/PokerHand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/poker/PokerHandsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/poker/PokerHandsTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -33,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+            <state relative-caret-position="227">
+              <caret line="78" column="46" lean-forward="true" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/poker/PokerHand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+            <state relative-caret-position="506">
+              <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -300,7 +301,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_AC_AD_and_9D_AS_AH_2D_KH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_AC_AD_and_9D_AS_3H_3D_AH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit_test" />
       <extension name="coverage">
         <pattern>
@@ -310,13 +311,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="poker" />
       <option name="MAIN_CLASS_NAME" value="poker.PokerHandsTest" />
-      <option name="METHOD_NAME" value="should_return_player1_win_when_given_2H_5S_4D_AC_AD_and_9D_AS_AH_2D_KH" />
+      <option name="METHOD_NAME" value="should_return_player2_win_when_given_2H_2S_4D_AC_AD_and_9D_AS_3H_3D_AH" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_KC_KD_and_9D_3S_3H_2D_KH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_3D_AH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit_test" />
       <extension name="coverage">
         <pattern>
@@ -326,13 +327,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="poker" />
       <option name="MAIN_CLASS_NAME" value="poker.PokerHandsTest" />
-      <option name="METHOD_NAME" value="should_return_player1_win_when_given_2H_5S_4D_KC_KD_and_9D_3S_3H_2D_KH" />
+      <option name="METHOD_NAME" value="should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_3D_AH" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PokerHandsTest.should_return_player2_win_when_given_2H_5S_4D_KC_KD_and_9D_KS_3H_2D_KH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_KS_3H_3D_KH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit_test" />
       <extension name="coverage">
         <pattern>
@@ -342,7 +343,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="poker" />
       <option name="MAIN_CLASS_NAME" value="poker.PokerHandsTest" />
-      <option name="METHOD_NAME" value="should_return_player2_win_when_given_2H_5S_4D_KC_KD_and_9D_KS_3H_2D_KH" />
+      <option name="METHOD_NAME" value="should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_KS_3H_3D_KH" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -351,10 +352,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PokerHandsTest" />
+        <item itemvalue="JUnit.PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_AC_AD_and_9D_AS_3H_3D_AH" />
+        <item itemvalue="JUnit.PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_KS_3H_3D_KH" />
+        <item itemvalue="JUnit.PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_3D_AH" />
         <item itemvalue="JUnit.PokerHandsTest.should_return_player1_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_2D_AH" />
-        <item itemvalue="JUnit.PokerHandsTest.should_return_player2_win_when_given_2H_5S_4D_KC_KD_and_9D_KS_3H_2D_KH" />
-        <item itemvalue="JUnit.PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_KC_KD_and_9D_3S_3H_2D_KH" />
-        <item itemvalue="JUnit.PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_AC_AD_and_9D_AS_AH_2D_KH" />
       </list>
     </recent_temporary>
   </component>
@@ -372,24 +373,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PokerHandsTest_should_return_player1_win_when_given_2H_5S_4D_3S_3H_and_9D_AS_AH_2D_KH - 2019.08.17 at 21h 49m 14s.xml">
-      <configuration name="PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_3S_3H_and_9D_AS_AH_2D_KH" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandsTest - 2019.08.17 at 21h 49m 30s.xml">
-      <configuration name="PokerHandsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandsTest_should_return_player1_win_when_given_2H_5S_4D_AC_AD_and_9D_AS_AH_2D_KH - 2019.08.17 at 21h 51m 37s.xml">
-      <configuration name="PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_AC_AD_and_9D_AS_AH_2D_KH" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandsTest_should_return_player1_win_when_given_KH_5S_4D_AC_AD_and_9D_AS_AH_2D_2H - 2019.08.17 at 21h 52m 10s.xml">
-      <configuration name="PokerHandsTest.should_return_player1_win_when_given_KH_5S_4D_AC_AD_and_9D_AS_AH_2D_2H" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandsTest_should_return_player1_win_when_given_2H_5S_4D_AC_AD_and_9D_AS_AH_2D_KH - 2019.08.17 at 21h 52m 57s.xml">
-      <configuration name="PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_AC_AD_and_9D_AS_AH_2D_KH" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandsTest_should_return_player1_win_when_given_2H_5S_4D_KC_KD_and_9D_3S_3H_2D_KH - 2019.08.17 at 21h 56m 05s.xml">
-      <configuration name="PokerHandsTest.should_return_player1_win_when_given_2H_5S_4D_KC_KD_and_9D_3S_3H_2D_KH" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PokerHandsTest - 2019.08.17 at 21h 56m 11s.xml">
       <configuration name="PokerHandsTest" configurationId="JUnit" />
     </history-entry>
@@ -402,15 +385,33 @@
     <history-entry file="PokerHandsTest_should_return_player1_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_2D_AH - 2019.08.17 at 22h 12m 03s.xml">
       <configuration name="PokerHandsTest.should_return_player1_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_2D_AH" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PokerHandsTest - 2019.08.17 at 22h 24m 27s.xml">
+      <configuration name="PokerHandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandsTest_should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_3D_AH - 2019.08.17 at 22h 27m 46s.xml">
+      <configuration name="PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_AS_3H_3D_AH" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandsTest_should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_KS_3H_3D_KH - 2019.08.17 at 22h 28m 14s.xml">
+      <configuration name="PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_KC_KD_and_9D_KS_3H_3D_KH" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandsTest_should_return_player2_win_when_given_2H_2S_4D_AC_AD_and_9D_AS_3H_3D_AH - 2019.08.17 at 22h 28m 47s.xml">
+      <configuration name="PokerHandsTest.should_return_player2_win_when_given_2H_2S_4D_AC_AD_and_9D_AS_3H_3D_AH" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandsTest - 2019.08.17 at 22h 29m 17s.xml">
+      <configuration name="PokerHandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandsTest - 2019.08.17 at 22h 39m 40s.xml">
+      <configuration name="PokerHandsTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11876000" />
+    <option name="totallyTimeSpent" value="12828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -419,7 +420,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -494,8 +495,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/poker/PokerHandsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+        <state relative-caret-position="227">
+          <caret line="78" column="46" lean-forward="true" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -504,8 +505,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/poker/PokerHand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="506">
+          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

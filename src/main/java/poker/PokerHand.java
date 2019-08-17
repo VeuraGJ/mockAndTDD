@@ -22,29 +22,38 @@ public class PokerHand {
         Map<Integer,Integer> player2ToMap = cardToMap(player2);
         List<Integer> player1PairCard = getPairCard(player1ToMap);
         List<Integer> player2PairCard = getPairCard(player2ToMap);
-        if(player1PairCard.size()>player2PairCard.size()){
-            return "player1 win";
-        }else if(player1PairCard.size()<player2PairCard.size()){
-            return "player2 win";
+        String result = compareTwoCard(player1PairCard.size(),player2PairCard.size());
+        if(!result.equals("peace")){
+            return result;
         }
-        Integer player1Pair = getMaxPairNumber(player1ToMap);
-        Integer player2Pair = getMaxPairNumber(player2ToMap);
-        if(player1Pair > player2Pair){
-            return "player1 win";
-        }else if(player1Pair < player2Pair){
-            return "player2 win";
+        List<Integer> player1Pair = sortedPairCard(player1PairCard);
+        List<Integer> player2Pair = sortedPairCard(player2PairCard);
+        for(int i =0;i<player1Pair.size();i++){
+            result = compareTwoCard(player1Pair.get(i),player2Pair.get(i));
+            if(!result.equals("peace")){
+                return result;
+            }
         }
         List<Integer> sortedPlayer1 = getSortedCardList(player1);
         List<Integer> sortedPlayer2 = getSortedCardList(player2);
         for(int i =0;i < sortedPlayer1.size();i++){
-            if(sortedPlayer1.get(i) > sortedPlayer2.get(i)){
-                return "player1 win";
-            }
-            if(sortedPlayer1.get(i) < sortedPlayer2.get(i)){
-                return "player2 win";
-            }
+            result = compareTwoCard(sortedPlayer1.get(i),sortedPlayer2.get(i));
+           if(result.equals("peace")){
+               continue;
+           }else{
+               return result;
+           }
         }
         return "peace";
+    }
+    private String compareTwoCard(Integer card1Number,Integer card2Number){
+        if(card1Number>card2Number){
+            return "player1 win";
+        }else if(card1Number<card2Number){
+            return "player2 win";
+        }else{
+            return "peace";
+        }
     }
     private List<Integer> getPairCard(Map<Integer,Integer> cardToMap){
         List<Integer> pairCard = new ArrayList<>();
@@ -55,14 +64,8 @@ public class PokerHand {
         }
         return pairCard;
     }
-    private Integer getMaxPairNumber(Map<Integer,Integer> cardToMap){
-        Integer maxPair = -1;
-        for(Integer carNumber:cardToMap.keySet()){
-            if(cardToMap.get(carNumber) == 2){
-                maxPair = maxPair > carNumber ? maxPair:carNumber;
-            }
-        }
-        return maxPair;
+    private List<Integer> sortedPairCard(List<Integer> pairCard){
+        return pairCard.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
     private Map<Integer,Integer> cardToMap(List<PokerCard> cards){
         Map<Integer,Integer> pairMap = new HashMap<>();
