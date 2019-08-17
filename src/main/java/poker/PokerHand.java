@@ -1,9 +1,6 @@
 package poker;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class PokerHand {
@@ -23,6 +20,13 @@ public class PokerHand {
     public String play(List<PokerCard> player1, List<PokerCard> player2) {
         Map<Integer,Integer> player1ToMap = cardToMap(player1);
         Map<Integer,Integer> player2ToMap = cardToMap(player2);
+        List<Integer> player1PairCard = getPairCard(player1ToMap);
+        List<Integer> player2PairCard = getPairCard(player2ToMap);
+        if(player1PairCard.size()>player2PairCard.size()){
+            return "player1 win";
+        }else if(player1PairCard.size()<player2PairCard.size()){
+            return "player2 win";
+        }
         Integer player1Pair = getMaxPairNumber(player1ToMap);
         Integer player2Pair = getMaxPairNumber(player2ToMap);
         if(player1Pair > player2Pair){
@@ -41,6 +45,15 @@ public class PokerHand {
             }
         }
         return "peace";
+    }
+    private List<Integer> getPairCard(Map<Integer,Integer> cardToMap){
+        List<Integer> pairCard = new ArrayList<>();
+        for(Integer carNumber:cardToMap.keySet()){
+            if(cardToMap.get(carNumber) == 2){
+                pairCard.add(carNumber);
+            }
+        }
+        return pairCard;
     }
     private Integer getMaxPairNumber(Map<Integer,Integer> cardToMap){
         Integer maxPair = -1;
