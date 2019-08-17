@@ -20,6 +20,13 @@ public class PokerHand {
     public String play(List<PokerCard> player1, List<PokerCard> player2) {
         Map<Integer,Integer> player1ToMap = cardToMap(player1);
         Map<Integer,Integer> player2ToMap = cardToMap(player2);
+        Integer threePair1 = getThreePairNumber(player1ToMap);
+        Integer threePair2 = getThreePairNumber(player2ToMap);
+        if(threePair1 > 0 && threePair2 == 0){
+            return "player1 win";
+        }else if(threePair1 == 0 && threePair2 > 0){
+            return "player2 win";
+        }
         List<Integer> player1PairCard = getPairCard(player1ToMap);
         List<Integer> player2PairCard = getPairCard(player2ToMap);
         String result = compareTwoCard(player1PairCard.size(),player2PairCard.size());
@@ -37,6 +44,14 @@ public class PokerHand {
             return result;
         }
         return "peace";
+    }
+    private Integer getThreePairNumber(Map<Integer,Integer> cardToMap){
+        for(Integer carNumber:cardToMap.keySet()){
+            if(cardToMap.get(carNumber) == 3){
+                return carNumber;
+            }
+        }
+        return 0;
     }
     private String compareTwoList(List<Integer> list1,List<Integer> list2){
         String result = "peace";

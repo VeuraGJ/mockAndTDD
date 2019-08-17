@@ -95,4 +95,16 @@ public class PokerHandsTest {
         Assert.assertEquals("player1 win",acutalResult);
 
     }
+    @Test
+    public void should_return_player1_win_when_given_2H_2S_9D_2C_6D_and_4D_AS_4H_7D_AH(){
+        //given
+        PokerHand pokerHand = new PokerHand();
+        //when
+        String acutalResult = pokerHand.play(Arrays.asList(new PokerCard("2H"),new PokerCard("2S"),new PokerCard("9D"),new PokerCard("2C"),new PokerCard("6D"))
+                ,Arrays.asList(new PokerCard("4D"),new PokerCard("AS"),new PokerCard("4H"),new PokerCard("7D"),new PokerCard("AH")));
+        //then
+        Assert.assertEquals("player1 win",acutalResult);
+
+    }
+
 }
