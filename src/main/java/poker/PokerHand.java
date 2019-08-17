@@ -22,10 +22,17 @@ public class PokerHand {
         List<Integer> sortedPlayer2 = getSortedCardList(player2);
         Map<Integer,Integer> player1ToMap = cardToMap(player1);
         Map<Integer,Integer> player2ToMap = cardToMap(player2);
+        Integer fourPair1 = getFourPairNumber(player1ToMap);
+        Integer fourPair2 = getFourPairNumber(player2ToMap);
         Integer threePair1 = getThreePairNumber(player1ToMap);
         Integer threePair2 = getThreePairNumber(player2ToMap);
         List<Integer> player1PairCard = getPairCard(player1ToMap);
         List<Integer> player2PairCard = getPairCard(player2ToMap);
+        if(fourPair1 > 0 && fourPair2 ==0){
+            return "player1 win";
+        }else if(fourPair1 == 0 && fourPair2 > 0){
+            return "player2 win";
+        }
         if(isFlush(player1) && !isFlush(player2)){
             if(threePair2 != 0 && player2PairCard.size()>0){
                 return "player2 win";
@@ -91,7 +98,14 @@ public class PokerHand {
         }
         return  false;
     }
-
+    private Integer getFourPairNumber(Map<Integer,Integer> cardToMap){
+        for(Integer carNumber:cardToMap.keySet()){
+            if(cardToMap.get(carNumber) == 4){
+                return carNumber;
+            }
+        }
+        return 0;
+    }
     private Integer getThreePairNumber(Map<Integer,Integer> cardToMap){
         for(Integer carNumber:cardToMap.keySet()){
             if(cardToMap.get(carNumber) == 3){
