@@ -8,47 +8,36 @@ import java.util.stream.Collectors;
 
 public class PokerHand {
 
-    private static Map<String,Integer> cardMap = new HashMap<String,Integer>(){{
-        put("T",10);
-        put("J",11);
-        put("Q",12);
-        put("K",13);
-        put("A",14);
-    }};
+    private static Map<String,Integer> cardMap = null;
+
+    public PokerHand() {
+        cardMap = new HashMap<String,Integer>(){{
+            put("T",10);
+            put("J",11);
+            put("Q",12);
+            put("K",13);
+            put("A",14);
+        }};
+    }
+
     public String play(List<PokerCard> player1, List<PokerCard> player2) {
-        Map<String,Integer> player1ToMap = new HashMap<>();
-        Map<String,Integer> player2ToMap = new HashMap<>();
-        for(PokerCard c : player1){
-            if(player1ToMap.containsKey(c.getNumber())){
-                player1ToMap.put(c.getNumber(),player1ToMap.get(c.getNumber())+1);
-            }
-            else{
-                player1ToMap.put(c.getNumber(),1);
-            }
-        }
-        for(PokerCard c : player2){
-            if(player2ToMap.containsKey(c.getNumber())){
-                player2ToMap.put(c.getNumber(),player2ToMap.get(c.getNumber())+1);
-            }
-            else {
-                player2ToMap.put(c.getNumber(),1);
-            }
-        }
-        String player1Pair = null;
-        String player2Pair = null;
-        for(String carNumber:player1ToMap.keySet()){
+        Map<Integer,Integer> player1ToMap = cardToMap(player1);
+        Map<Integer,Integer> player2ToMap = cardToMap(player2);
+        Integer player1Pair = -1;
+        Integer player2Pair = -1;
+        for(Integer carNumber:player1ToMap.keySet()){
             if(player1ToMap.get(carNumber) == 2){
-                player1Pair = carNumber;
+                player1Pair = player1Pair > carNumber ? player1Pair:carNumber;
             }
         }
-        for(String carNumber:player2ToMap.keySet()){
+        for(Integer carNumber:player2ToMap.keySet()){
             if(player2ToMap.get(carNumber) == 2){
-                player2Pair = carNumber;
+                player2Pair = player2Pair > carNumber ? player2Pair:carNumber;
             }
         }
-        if(player1Pair != null && player2Pair == null){
+        if(player1Pair > player2Pair){
             return "player1 win";
-        }else if(player1Pair == null && player2Pair != null){
+        }else if(player1Pair < player2Pair){
             return "player2 win";
         }
         List<Integer> sortedPlayer1 = getSortedCardList(player1);
@@ -62,6 +51,18 @@ public class PokerHand {
             }
         }
         return "peace";
+    }
+    private Map<Integer,Integer> cardToMap(List<PokerCard> cards){
+        Map<Integer,Integer> pairMap = new HashMap<>();
+        for(PokerCard c : cards){
+            if(pairMap.containsKey(parseCardNumber(c))){
+                pairMap.put(parseCardNumber(c),pairMap.get(parseCardNumber(c))+1);
+            }
+            else{
+                pairMap.put(parseCardNumber(c),1);
+            }
+        }
+        return pairMap;
     }
     private List<Integer> getSortedCardList(List<PokerCard> cards){
         return cards.stream()
