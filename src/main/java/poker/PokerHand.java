@@ -18,28 +18,34 @@ public class PokerHand {
     }
 
     public String play(List<PokerCard> player1, List<PokerCard> player2) {
-        if(isFlush(player1) && !isFlush(player2)){
-            return "player1 win";
-        }else if(!isFlush(player1) && isFlush(player2)){
-            return "player2 win";
-        }
         List<Integer> sortedPlayer1 = getSortedCardList(player1);
         List<Integer> sortedPlayer2 = getSortedCardList(player2);
+        Map<Integer,Integer> player1ToMap = cardToMap(player1);
+        Map<Integer,Integer> player2ToMap = cardToMap(player2);
+        Integer threePair1 = getThreePairNumber(player1ToMap);
+        Integer threePair2 = getThreePairNumber(player2ToMap);
+        List<Integer> player1PairCard = getPairCard(player1ToMap);
+        List<Integer> player2PairCard = getPairCard(player2ToMap);
+        if(isFlush(player1) && !isFlush(player2)){
+            if(threePair2 != 0 && player2PairCard.size()>0){
+                return "player2 win";
+            }
+            return "player1 win";
+        }else if(!isFlush(player1) && isFlush(player2)){
+            if(threePair1 != 0 && player1PairCard.size()>0){
+                return "player1 win";
+            }
+            return "player2 win";
+        }
         if(isStraight(sortedPlayer1) && !isStraight(sortedPlayer2)){
             return "player1 win";
         }else if(!isStraight(sortedPlayer1) && isStraight(sortedPlayer2)){
             return "player2 win";
         }
-        Map<Integer,Integer> player1ToMap = cardToMap(player1);
-        Map<Integer,Integer> player2ToMap = cardToMap(player2);
-        Integer threePair1 = getThreePairNumber(player1ToMap);
-        Integer threePair2 = getThreePairNumber(player2ToMap);
         String result = compareTwoCard(threePair1,threePair2);
         if(!result.equals("peace")){
             return result;
         }
-        List<Integer> player1PairCard = getPairCard(player1ToMap);
-        List<Integer> player2PairCard = getPairCard(player2ToMap);
         result = compareTwoCard(player1PairCard.size(),player2PairCard.size());
         if(!result.equals("peace")){
             return result;
