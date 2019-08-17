@@ -44,10 +44,7 @@ public class PokerHand {
             return result;
         }
         result = compareTwoList(sortedPlayer1,sortedPlayer2);
-        if(!result.equals("peace")){
-            return result;
-        }
-        return "peace";
+        return result;
     }
 
     private boolean isStraight(List<Integer> sortedCards) {
