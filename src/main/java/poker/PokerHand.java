@@ -22,14 +22,13 @@ public class PokerHand {
         Map<Integer,Integer> player2ToMap = cardToMap(player2);
         Integer threePair1 = getThreePairNumber(player1ToMap);
         Integer threePair2 = getThreePairNumber(player2ToMap);
-        if(threePair1 > 0 && threePair2 == 0){
-            return "player1 win";
-        }else if(threePair1 == 0 && threePair2 > 0){
-            return "player2 win";
+        String result = compareTwoCard(threePair1,threePair2);
+        if(!result.equals("peace")){
+            return result;
         }
         List<Integer> player1PairCard = getPairCard(player1ToMap);
         List<Integer> player2PairCard = getPairCard(player2ToMap);
-        String result = compareTwoCard(player1PairCard.size(),player2PairCard.size());
+        result = compareTwoCard(player1PairCard.size(),player2PairCard.size());
         if(!result.equals("peace")){
             return result;
         }
